@@ -191,16 +191,16 @@ end
 
 return {
     patterns = {
-        '^[+](setname) (.*)$',
-        '^[+](link)$',
-        '^[+](tosuper)$',
-        '^[+](newlink)$',
-        '^[+](setlink) (.*)$',
-        '^[+](setdes) (.*)$',
-        "^[+](kick)$",
-        "^[+](kick) (.*)$",
-        "^[+](inv)$",
-        "^[+](inv) (.*)$",
+        '^[!](setname) (.*)$',
+        '^[!](link)$',
+        '^[!](tosuper)$',
+        '^[!](newlink)$',
+        '^[!](setlink) (.*)$',
+        '^[!](setdes) (.*)$',
+        "^[!](kick)$",
+        "^[!](kick) (.*)$",
+        "^[!](inv)$",
+        "^[!](inv) (.*)$",
     },
     run = run
 }
