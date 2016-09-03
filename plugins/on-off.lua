@@ -17,13 +17,13 @@ local function enable_channel(receiver)
 	end
 
 	if _config.disabled_channels[receiver] == nil then
-		return "Selfbot is online▶️"
+		return "Selfbot is on▶️"
 	end
 	
 	_config.disabled_channels[receiver] = false
 
 	save_config()
-	return "Selfbot is online▶️"
+	return "Selfbot is on▶️"
 end
 
 local function disable_channel( receiver )
@@ -34,7 +34,7 @@ local function disable_channel( receiver )
 	_config.disabled_channels[receiver] = true
 
 	save_config()
-	return "Selfbot is offline■"
+	return "Selfbot is off■"
 end
 
 local function pre_process(msg)
@@ -42,7 +42,7 @@ local function pre_process(msg)
 	
 	-- If sender is moderator then re-enable the channel
 	if is_sudo(msg) then
-	  if msg.text == "+self on" or msg.text == "/Bot on" or msg.text == "!bot on" or msg.text == "!Bot on" then
+	  if msg.text == "/on" or msg.text == "/on" or msg.text == "!on" or msg.text == "!on" then
 	  
 	    enable_channel(receiver)
 	  end
@@ -79,8 +79,8 @@ return {
 		"/channel enable: enable current channel",
 		"/channel disable: disable current channel" },
 	patterns = {
-		"^[!/+][Bb]ot (on)",
-		"^[!/+][Bb]ot (off)" }, 
+		"^[!/+][Oo]n",
+		"^[!/+][Oo]ff" }, 
 	run = run,
 	--privileged = true,
 	moderated = true,
